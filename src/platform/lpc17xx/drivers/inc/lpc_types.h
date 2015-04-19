@@ -40,11 +40,6 @@
  */
 
 /**
- * @brief Boolean Type definition
- */
-typedef enum {FALSE = 0, TRUE = !FALSE} Bool;
-
-/**
  * @brief Flag Status and Interrupt Flag Status type definition
  */
 typedef enum {RESET = 0, SET = !RESET} FlagStatus, IntStatus, SetState;
@@ -174,19 +169,17 @@ typedef int64_t INT_64;
 /** SMA type for 64 bit unsigned value */
 typedef uint64_t UNS_64;
 
-/** 32 bit boolean type */
-typedef Bool BOOL_32;
-
-/** 16 bit boolean type */
-typedef Bool BOOL_16;
-
-/** 8 bit boolean type */
-typedef Bool BOOL_8;
-
 /**
  * @}
  */
 
+typedef unsigned int Bool;
+#ifndef TRUE
+#define TRUE 1
+#endif
+#ifndef FALSE
+#define FALSE 0 
+#endif
 
 #endif /* LPC_TYPES_H */
 
