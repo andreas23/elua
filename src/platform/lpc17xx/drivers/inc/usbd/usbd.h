@@ -34,6 +34,7 @@
  */
 
 #include "lpc_types.h"
+#include "lpc175x_6x_irq.h"
 
 #if defined(__GNUC__)
 /* As per http://gcc.gnu.org/onlinedocs/gcc/Attribute-Syntax.html#Attribute-Syntax,
@@ -51,6 +52,10 @@ So use POST_PACK immediately after struct keyword
 #define PRE_PACK
 #define POST_PACK	__attribute__((__packed__))
 #define ALIGNED(n)      __attribute__((aligned (n)))
+
+#define INLINE inline
+typedef char bool;
+
 
 #elif defined(__arm)
 #define PRE_PACK	__packed

@@ -4,7 +4,9 @@ addi( sf( 'src/platform/%s/drivers/inc', platform ) )
 addi( sf( 'src/platform/%s/drivers/inc/usbd', platform ) )
 
 local fwlib_files = utils.get_files( sf( "src/platform/%s/drivers/src", platform ), ".*%.c$" )
-specific_files = "startup_LPC17xx.c system_LPC17xx.c core_cm3.c platform.c mbed_pio.c"
+specific_files = "startup_LPC17xx.c system_LPC17xx.c core_cm3.c platform.c cdc_desc.c cdc_vcom.c cdc_init.c mbed_pio.c"
+
+-- put in some conditionals for mbed_pio.c and cdc*
 
 local ldscript = "LPC17xx.ld"
  
